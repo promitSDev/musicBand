@@ -1,6 +1,14 @@
 function clickAlert(){
      var instrument=this.innerHTML;
-     switch(instrument){
+     makeSound(instrument);
+}
+
+document.addEventListener("keydown",function(event){
+   makeSound(event.key);
+})
+
+function makeSound(key){
+    switch(key){
         case 'w':
             var audio = new Audio("sounds/tom-1.mp3");
             audio.play();
